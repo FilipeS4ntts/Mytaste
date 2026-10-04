@@ -9,13 +9,14 @@
 
 /* 1. Fonte
    ========================================================================== */
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
 
 
 /* 2. Variáveis
    ========================================================================== */
 
+   
 :root {
   /* Fundos e bordas */
   --bg: #07070c;
