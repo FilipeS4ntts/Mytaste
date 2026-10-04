@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cadastre um jogo no Mytaste.">
+  <title>Mytaste | Cadastrar jogo</title>
+  <link rel="icon" href="assets/logo-mark.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/logo-mark.png" alt="" width="42" height="40"><span>Mytaste</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="jogos.html">Meus jogos</a></li>
+        <li><a href="cadastro.html" aria-current="page">Cadastrar jogo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <div>
+        <h1>Cadastrar jogo</h1>
+        <p>Preencha os dados do jogo para somá-lo ao seu perfil.</p>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="card" aria-labelledby="form-titulo">
+        <h2 id="form-titulo" class="sr-only">Formulário do jogo</h2>
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="titulo">Título</label>
+              <input type="text" id="titulo" name="titulo" required placeholder="Ex.: Celeste">
+            </div>
+            <div class="field">
+              <label for="desenvolvedora">Desenvolvedora</label>
+              <input type="text" id="desenvolvedora" name="desenvolvedora" placeholder="Ex.: Maddy Makes Games">
+            </div>
+            <div class="field">
+              <label for="genero">Gênero</label>
+              <select id="genero" name="genero" required>
+                <option value="">Selecione</option>
+                <option value="acao">Ação</option>
+                <option value="rpg">RPG</option>
+                <option value="plataforma">Plataforma</option>
+                <option value="simulacao">Simulação</option>
+                <option value="estrategia">Estratégia</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="plataforma">Plataforma</label>
+              <select id="plataforma" name="plataforma">
+                <option value="pc">PC</option>
+                <option value="playstation">PlayStation</option>
+                <option value="xbox">Xbox</option>
+                <option value="switch">Nintendo Switch</option>
+                <option value="mobile">Celular</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ano">Ano de lançamento</label>
+              <input type="number" id="ano" name="ano" min="1970" max="2030" placeholder="2018">
+            </div>
+            <div class="field">
+              <label for="nota">Sua nota (0 a 10)</label>
+              <input type="number" id="nota" name="nota" min="0" max="10" step="0.1" placeholder="9.0">
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Status</legend>
+            <label><input type="radio" name="status" value="jogando"> Jogando</label>
+            <label><input type="radio" name="status" value="zerado" checked> Zerado</label>
+            <label><input type="radio" name="status" value="quero"> Quero jogar</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="descricao">Sua opinião</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="O que fez esse jogo marcar você?"></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Salvar jogo</button>
+            <button class="btn" type="reset">Limpar</button>
+            <a class="btn" href="jogos.html">Cancelar</a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="card" aria-labelledby="dicas-titulo">
+        <h2 id="dicas-titulo">Dicas</h2>
+        <ul>
+          <li>Título e gênero são obrigatórios.</li>
+          <li>A nota ajuda a definir seu perfil de gosto.</li>
+          <li>Esta mesma página servirá para editar um jogo.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mytaste. Projeto acadêmico em desenvolvimento.</p>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="jogos.html">Meus jogos</a></li>
+        <li><a href="cadastro.html">Cadastrar jogo</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cadastre um jogo no Mytaste.">
+  <title>Mytaste | Cadastrar jogo</title>
+  <link rel="icon" href="assets/logo-mark.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/logo-mark.png" alt="" width="42" height="40"><span>Mytaste</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="jogos.html">Meus jogos</a></li>
+        <li><a href="cadastro.html" aria-current="page">Cadastrar jogo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <div>
+        <h1>Cadastrar jogo</h1>
+        <p>Preencha os dados do jogo para somá-lo ao seu perfil.</p>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="card" aria-labelledby="form-titulo">
+        <h2 id="form-titulo" class="sr-only">Formulário do jogo</h2>
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="titulo">Título</label>
+              <input type="text" id="titulo" name="titulo" required placeholder="Ex.: Celeste">
+            </div>
+            <div class="field">
+              <label for="desenvolvedora">Desenvolvedora</label>
+              <input type="text" id="desenvolvedora" name="desenvolvedora" placeholder="Ex.: Maddy Makes Games">
+            </div>
+            <div class="field">
+              <label for="genero">Gênero</label>
+              <select id="genero" name="genero" required>
+                <option value="">Selecione</option>
+                <option value="acao">Ação</option>
+                <option value="rpg">RPG</option>
+                <option value="plataforma">Plataforma</option>
+                <option value="simulacao">Simulação</option>
+                <option value="estrategia">Estratégia</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="plataforma">Plataforma</label>
+              <select id="plataforma" name="plataforma">
+                <option value="pc">PC</option>
+                <option value="playstation">PlayStation</option>
+                <option value="xbox">Xbox</option>
+                <option value="switch">Nintendo Switch</option>
+                <option value="mobile">Celular</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ano">Ano de lançamento</label>
+              <input type="number" id="ano" name="ano" min="1970" max="2030" placeholder="2018">
+            </div>
+            <div class="field">
+              <label for="nota">Sua nota (0 a 10)</label>
+              <input type="number" id="nota" name="nota" min="0" max="10" step="0.1" placeholder="9.0">
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Status</legend>
+            <label><input type="radio" name="status" value="jogando"> Jogando</label>
+            <label><input type="radio" name="status" value="zerado" checked> Zerado</label>
+            <label><input type="radio" name="status" value="quero"> Quero jogar</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="descricao">Sua opinião</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="O que fez esse jogo marcar você?"></textarea>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Salvar jogo</button>
+            <button class="btn" type="reset">Limpar</button>
+            <a class="btn" href="jogos.html">Cancelar</a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="card" aria-labelledby="dicas-titulo">
+        <h2 id="dicas-titulo">Dicas</h2>
+        <ul>
+          <li>Título e gênero são obrigatórios.</li>
+          <li>A nota ajuda a definir seu perfil de gosto.</li>
+          <li>Esta mesma página servirá para editar um jogo.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mytaste. Projeto acadêmico em desenvolvimento.</p>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="jogos.html">Meus jogos</a></li>
+        <li><a href="cadastro.html">Cadastrar jogo</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
