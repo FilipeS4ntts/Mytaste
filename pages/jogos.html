@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lista dos jogos cadastrados no Mytaste.">
+  <title>Mytaste | Meus jogos</title>
+  <link rel="icon" href="../assets/img/logo-mark.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><img src="../assets/img/logo-completa.png" alt="Mytaste, página inicial" width="480" height="415"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="jogos.html" aria-current="page">Meus jogos</a></li>
+        <li><a href="cadastro.html">Cadastrar jogo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-title">
+      <div>
+        <h1>Meus jogos</h1>
+        <p>Os jogos que definem o seu perfil.</p>
+      </div>
+      <a class="btn btn-primary" href="cadastro.html">Cadastrar jogo</a>
+    </div>
+
+    <div class="layout">
+      <div>
+        <section aria-labelledby="busca-titulo">
+          <h2 id="busca-titulo" class="sr-only">Pesquisa, filtro e ordenação</h2>
+          <form class="toolbar card" role="search" action="#">
+            <div class="field">
+              <label for="busca">Pesquisar</label>
+              <input type="search" id="busca" name="busca" placeholder="Nome do jogo">
+            </div>
+            <div class="field">
+              <label for="genero">Gênero</label>
+              <select id="genero" name="genero">
+                <option value="">Todos</option>
+                <option value="acao">Ação</option>
+                <option value="rpg">RPG</option>
+                <option value="plataforma">Plataforma</option>
+                <option value="simulacao">Simulação</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ordem">Ordenar por</label>
+              <select id="ordem" name="ordem">
+                <option value="titulo">Título (A a Z)</option>
+                <option value="ano">Ano (mais recente)</option>
+                <option value="nota">Nota (maior)</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Aplicar</button>
+            <button class="btn" type="reset">Limpar</button>
+          </form>
+        </section>
+
+        <section aria-labelledby="lista-titulo">
+          <h2 id="lista-titulo" class="sr-only">Jogos cadastrados</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>4 jogos cadastrados</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Título</th>
+                  <th scope="col">Gênero</th>
+                  <th scope="col">Ano</th>
+                  <th scope="col">Nota</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Celeste</th>
+                  <td>Plataforma</td>
+                  <td>2018</td>
+                  <td>9,2</td>
+                  <td><div class="actions"><a class="btn btn-sm" href="detalhes.html">Ver detalhes</a><button class="btn btn-sm" type="button">Editar</button><button class="btn btn-sm btn-danger" type="button">Excluir</button></div></td>
+                </tr>
+                <tr>
+                  <th scope="row">Hades</th>
+                  <td>Ação</td>
+                  <td>2020</td>
+                  <td>9,5</td>
+                  <td><div class="actions"><a class="btn btn-sm" href="detalhes.html">Ver detalhes</a><button class="btn btn-sm" type="button">Editar</button><button class="btn btn-sm btn-danger" type="button">Excluir</button></div></td>
+                </tr>
+                <tr>
+                  <th scope="row">Stardew Valley</th>
+                  <td>Simulação</td>
+                  <td>2016</td>
+                  <td>9,0</td>
+                  <td><div class="actions"><a class="btn btn-sm" href="detalhes.html">Ver detalhes</a><button class="btn btn-sm" type="button">Editar</button><button class="btn btn-sm btn-danger" type="button">Excluir</button></div></td>
+                </tr>
+                <tr>
+                  <th scope="row">The Witcher 3</th>
+                  <td>RPG</td>
+                  <td>2015</td>
+                  <td>9,8</td>
+                  <td><div class="actions"><a class="btn btn-sm" href="detalhes.html">Ver detalhes</a><button class="btn btn-sm" type="button">Editar</button><button class="btn btn-sm btn-danger" type="button">Excluir</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <aside class="card stack" aria-labelledby="perfil-titulo">
+        <h2 id="perfil-titulo">Seu perfil de gosto</h2>
+        <dl>
+          <dt>Jogos</dt><dd>4</dd>
+          <dt>Gênero em alta</dt><dd>RPG</dd>
+          <dt>Nota média</dt><dd>9,4</dd>
+        </dl>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mytaste. Projeto acadêmico em desenvolvimento.</p>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="jogos.html">Meus jogos</a></li>
+        <li><a href="cadastro.html">Cadastrar jogo</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
