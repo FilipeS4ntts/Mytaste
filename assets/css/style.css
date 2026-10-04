@@ -1,0 +1,566 @@
+/* ==========================================================================
+   Mytaste | Folha de estilos principal
+
+   Tema escuro (padrão). Todas as cores ficam em variáveis para facilitar
+   a criação do modo claro depois.
+
+   Sumário
+   1.  Fonte
+   2.  Variáveis
+   3.  Reset e base
+   4.  Utilitários
+   5.  Cabeçalho
+   6.  Navegação
+   7.  Rodapé
+   8.  Estrutura das páginas
+   9.  Cartões e hero
+   10. Botões
+   11. Tabela
+   12. Formulários
+   13. Detalhes do jogo
+   14. Responsivo
+   ========================================================================== */
+
+
+/* 1. Fonte
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+
+/* 2. Variáveis
+   ========================================================================== */
+
+:root {
+  /* Fundos e bordas */
+  --bg: #07070c;
+  --surface: #11111a;
+  --surface-2: #181824;
+  --line: #2a2a3a;
+
+  /* Texto */
+  --text: #ededf2;
+  --muted: #9b9bb0;
+  --gray: #7b8494;
+
+  /* Destaque (roxo da logo) */
+  --accent: #7c4dff;
+  --accent-2: #a78bfa;
+  --glow: rgba(124, 77, 255, 0.35);
+
+  /* Estados */
+  --danger: #ff8da1;
+
+  /* Forma: ecoa as duas metades da logo */
+  --shape: 28px 8px 8px 28px;
+
+  /* Tipografia */
+  --font: 'Quicksand', system-ui, sans-serif;
+
+  /* Margem lateral que centraliza o conteúdo em até 1100px */
+  --gutter: max(1rem, calc((100% - 1100px) / 2));
+
+  color-scheme: dark;
+}
+
+
+/* 3. Reset e base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font: 500 1rem/1.65 var(--font);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  max-width: 65ch;
+}
+
+/* Imagens nunca estouram o container nem deformam */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent-2);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+
+/* 4. Utilitários
+   ========================================================================== */
+
+/* Esconde visualmente, mas mantém o conteúdo para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Lista sem marcadores, usada nos destaques da página inicial */
+.lista-limpa {
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Espaçamento vertical entre os filhos diretos (cards de texto) */
+.stack > * + * {
+  margin-top: 0.6rem;
+}
+
+
+/* 5. Cabeçalho
+   ========================================================================== */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+/* Logo completa (símbolo + nome): maior que um logo comum, por isso o cabeçalho não é fixo */
+.brand {
+  display: block;
+}
+
+.brand img {
+  width: auto;
+  height: clamp(72px, 10vw, 96px);
+  mix-blend-mode: lighten; /* esconde o fundo preto da imagem */
+}
+
+
+/* 6. Navegação (cabeçalho e rodapé)
+   ========================================================================== */
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+nav a[aria-current="page"] {
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px var(--accent);
+  color: var(--text);
+}
+
+
+/* 7. Rodapé
+   ========================================================================== */
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem var(--gutter);
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* 8. Estrutura das páginas
+   ========================================================================== */
+
+main {
+  display: grid;
+  flex: 1;
+  align-content: start;
+  gap: 2.5rem;
+  width: min(1100px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+/* Título da página com ação à direita */
+.page-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Conteúdo principal + coluna lateral (aside) */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  align-items: start;
+  gap: 2rem;
+}
+
+.layout > * {
+  min-width: 0;
+}
+
+.layout > div {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Texto de apresentação + cards, lado a lado */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+  gap: 2rem;
+}
+
+.split > div {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+/* Grade de cards que se ajusta à largura disponível */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+}
+
+
+/* 9. Cartões e hero
+   ========================================================================== */
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--shape);
+  background: var(--surface);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border-color: var(--accent);
+  background:
+    radial-gradient(circle at 85% 50%, var(--glow), transparent 55%),
+    var(--surface);
+}
+
+.hero > div {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+
+.hero img {
+  justify-self: center;
+  width: 100%;
+  max-width: 300px;
+  mix-blend-mode: lighten;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+/* 10. Botões
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--accent-2);
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  box-shadow: 0 0 24px var(--glow);
+}
+
+.btn-danger {
+  color: var(--danger);
+}
+
+.btn-sm {
+  padding: 0.25rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* Grupo de botões lado a lado */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+
+/* 11. Tabela
+   ========================================================================== */
+
+/* Permite rolagem horizontal em telas pequenas */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--shape);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+caption {
+  padding: 1rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+thead th {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+tbody tr:hover {
+  background: var(--surface-2);
+}
+
+
+/* 12. Formulários
+   ========================================================================== */
+
+form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+/* Barra de pesquisa, filtro e ordenação */
+form.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+}
+
+.toolbar .field {
+  flex: 1 1 160px;
+}
+
+/* Campos do cadastro em colunas responsivas */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+label,
+legend {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+fieldset input {
+  width: auto;
+  accent-color: var(--accent);
+}
+
+
+/* 13. Detalhes do jogo
+   ========================================================================== */
+
+.detail {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+}
+
+.detail > div {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 1rem;
+}
+
+figure {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 4;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--shape);
+  background: var(--surface-2);
+}
+
+figure img {
+  width: 70%;
+  mix-blend-mode: lighten;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1.2rem;
+}
+
+dt {
+  color: var(--gray);
+}
+
+dd {
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+
+/* 14. Responsivo
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  .hero,
+  .split,
+  .layout,
+  .detail {
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    max-width: 240px;
+    aspect-ratio: auto;
+  }
+}
