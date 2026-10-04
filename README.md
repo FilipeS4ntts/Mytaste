@@ -126,4 +126,4 @@ Itens planejados, ainda não implementados:
 - [ ] Mostrar o jogo selecionado em `detalhes.html`.
 - [ ] Criar a página de perfil, com os gêneros e jogos que definem o gosto da pessoa.
 - [ ] Implementar o modo claro.
-- [ ] Integrar uma API, se for necessário.
+- [ ] Integrar uma API
